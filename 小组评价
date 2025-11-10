@@ -1,0 +1,152 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的小组评价</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e53e3e',
+                        secondary: '#fef3c7',
+                        accent: '#fbbf24',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .paper-bg {
+                background-color: #fffbf0;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f5d489' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .card-shadow {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), 
+                            0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            .header-dots::before {
+                content: "● ● ●";
+                color: white;
+                letter-spacing: 4px;
+                position: absolute;
+                top: 12px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen py-8 px-4 md:py-16">
+    <div class="max-w-3xl mx-auto">
+        <!-- 评价卡片 -->
+        <div class="bg-white rounded-3xl overflow-hidden card-shadow relative">
+            <!-- 红色头部 -->
+            <div class="bg-primary h-16 relative header-dots">
+                <h1 class="text-black text-center pt-16 pb-4 text-2xl md:text-3xl font-bold">我的小组评价</h1>
+            </div>
+            
+            <!-- 表格内容 -->
+            <div class="p-4 md:p-8 paper-bg">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-amber-200">
+                            <th class="py-3 px-2 text-left text-amber-800 font-semibold w-1/4">评价项目</th>
+                            <th class="py-3 px-2 text-left text-amber-800 font-semibold w-2/4">评价内容</th>
+                            <th class="py-3 px-2 text-center text-amber-800 font-semibold w-1/4">评分(5分满分)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 合作素养 -->
+                        <tr class="border-b border-amber-100">
+                            <td class="py-4 px-2 font-medium text-amber-900 align-top" rowspan="3">合作素养</td>
+                            <td class="py-3 px-2 text-gray-700">责任意识：在团队中明确自身角色与职责，合理分配任务，共同解决项目中遇到的各类问题。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-amber-100">
+                            <td class="py-3 px-2 text-gray-700">互动意识：深度参与校园融媒体实践项目，合作氛围融洽，能很好地进行团队协作。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-amber-100">
+                            <td class="py-3 px-2 text-gray-700">创意贡献：提出有效创新方案，愿意主动分享技能，帮助团队完成任务。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <!-- 新闻素养 -->
+                        <tr class="border-b border-amber-100">
+                            <td class="py-4 px-2 font-medium text-amber-900 align-top" rowspan="2">新闻素养</td>
+                            <td class="py-3 px-2 text-gray-700">信息辨别：熟练掌握信息鉴别方法，在复杂的信息环境中保持独立判断能力。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-amber-100">
+                            <td class="py-3 px-2 text-gray-700">新闻技能：能够根据不同的新闻场景和传播需求，灵活运用多种媒体形态进行内容创作。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <!-- 媒体素养 -->
+                        <tr class="border-b border-amber-100">
+                            <td class="py-4 px-2 font-medium text-amber-900 align-top" rowspan="2">媒体素养</td>
+                            <td class="py-3 px-2 text-gray-700">媒介运用：熟练掌握各种平台和软件的使用方法，能够运用技术手段实现信息的获取、处理和传播。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">新闻责任感：树立正确的新闻价值观，增强社会责任感，主动运用新媒体技能服务公共议题。</td>
+                            <td class="py-3 px-2 text-center">
+                                <div class="w-10 h-10 rounded-full border-2 border-amber-200 mx-auto flex items-center justify-center">
+                                    <input type="number" min="0" max="5" step="0.5" class="w-8 text-center focus:outline-none text-gray-700">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 装饰元素 -->
+        <div class="hidden md:block absolute -top-10 -left-10 w-40 h-40 bg-amber-200 rounded-full opacity-20"></div>
+        <div class="hidden md:block absolute -bottom-20 -right-20 w-60 h-60 bg-primary rounded-full opacity-10"></div>
+    </div>
+
+    <script>
+        // 为评分输入框添加数值限制功能
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.value > 5) this.value = 5;
+                if (this.value < 0) this.value = 0;
+                if (this.value === '') this.value = '';
+            });
+        });
+    </script>
+
+
+    </body></html>
